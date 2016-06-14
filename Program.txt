@@ -1,0 +1,8 @@
+1  MOV   AH,  F1H  
+2  MOV   AL,  1CH  
+3  PUSH  AL,                               
+4  POP   DH,                               
+5  SUB   AH,  AL  
+6  SUB   AL,  01H  
+7  ADD   CL,  22H  
+8  

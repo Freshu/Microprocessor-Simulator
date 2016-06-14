@@ -1,0 +1,4 @@
+1  MOV   AH,  FFH  
+2  PUSH  AH,                               
+3  POP   CL,                               
+4  

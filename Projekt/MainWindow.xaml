@@ -1,0 +1,89 @@
+﻿<Window x:Class="Projekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        Title="Microprocessor Simulator" MinHeight="365" MinWidth="800" Height="365" Width="850">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="5">
+            <Label Content="Your code" HorizontalAlignment="Center" Margin="0,10" FontWeight="Heavy"/>
+            <TextBlock Name="CodeTextBlock" TextAlignment="Left" Margin="10,0" HorizontalAlignment="Left" Height="280" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <Label Content="Register A" HorizontalAlignment="Center" Margin="0,5,0,0" FontWeight="Heavy"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="AH" HorizontalAlignment="Left" Margin="0,0,30,0"/>
+                <Label Content="AL" HorizontalAlignment="Right" Margin="30,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Name="RegisterAHTextBlock" HorizontalAlignment="Left" Text="{Binding Path=value}" Margin="0,0,20,0"/>
+                <TextBlock Name="RegisterALTextBlock" HorizontalAlignment="Right" Text="{Binding Path=value}" Margin="20,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <Label Content="Register B" HorizontalAlignment="Center" Margin="0,80,0,0" FontWeight="Heavy"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="BH" HorizontalAlignment="Left" Margin="0,0,30,0"/>
+                <Label Content="BL" HorizontalAlignment="Right" Margin="30,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Name="RegisterBHTextBlock" HorizontalAlignment="Left" Text="{Binding Path=value}" Margin="0,0,20,0"/>
+                <TextBlock Name="RegisterBLTextBlock" HorizontalAlignment="Right" Text="{Binding Path=value}" Margin="20,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <Label Content="Register C" HorizontalAlignment="Center" Margin="0,160,0,0" FontWeight="Heavy"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="CH" HorizontalAlignment="Left" Margin="0,0,30,0"/>
+                <Label Content="CL" HorizontalAlignment="Right" Margin="30,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Name="RegisterCHTextBlock" HorizontalAlignment="Left" Text="{Binding Path=value}" Margin="0,0,20,0"/>
+                <TextBlock Name="RegisterCLTextBlock" HorizontalAlignment="Right" Text="{Binding Path=value}" Margin="20,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <Label Content="Register D" HorizontalAlignment="Center" Margin="0,240,0,0" FontWeight="Heavy"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="DH" HorizontalAlignment="Left" Margin="0,0,30,0"/>
+                <Label Content="DL" HorizontalAlignment="Right" Margin="30,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Name="RegisterDHTextBlock" HorizontalAlignment="Left" Text="{Binding Path=value}" Margin="0,0,20,0"/>
+                <TextBlock Name="RegisterDLTextBlock" HorizontalAlignment="Right" Text="{Binding Path=value}" Margin="20,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" HorizontalAlignment="Center" Width="120">
+            <Button Content="Add instruction" Name="AddInstructionButton" Margin="0,30,0,10" Click="AddInstructionButton_Click"/>
+            <ComboBox Name="InstructionComboBox" SelectionChanged="InstructionComboBox_SelectionChanged"/>
+            <Button Content="Add register" Name="AddRegisterButton" Margin="0,10" Click="AddRegisterButton_Click"/>
+            <ComboBox Name="RegisterComboBox"/>
+            <Button Content="Immediate addressing" Name="ImmediateAddrButton" Margin="0,10,0,5" Click="ImmediateAddrButton_Click"/>
+            <TextBox Name="HexaDecimalTextBox"/>
+            <Button Content="Clear all" Name="ClearAllButton" Margin="0,5" Click="ClearAllButton_Click"/>
+            <Button Content="Save code" Name="SaveCodeButton" Margin="0,5" Click="SaveCodeButton_Click"/>
+            <Button Content="Load code" Name="LoadCodeButton" Margin="0,5" Click="LoadCodeButton_Click"/>
+            <Button Content="Execute" Name="ExecuteButton" Margin="0,5" Click="ExecuteButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="3" HorizontalAlignment="Center">
+            <Label Content="What it does?" HorizontalAlignment="Center" Margin="0" FontWeight="Heavy"/>
+            <TextBlock Name="WhatItDoesTextBlock" TextAlignment="Left" Margin="0,10" HorizontalAlignment="Center" Height="150" Width="320"/>
+            
+        </StackPanel>
+    </Grid>
+</Window>
